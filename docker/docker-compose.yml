@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0
+    container_name: mongodb_container
+    restart: always
+    ports:
+      - 1001:27017
+    networks:
+      - backend
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: milu
+      MONGO_INITDB_ROOT_PASSWORD: milu_3323
+
+    volumes:
+      - ./mongodb_data:/data/db
+
+networks:
+  backend:
+    external:
+      name: proxy
+
