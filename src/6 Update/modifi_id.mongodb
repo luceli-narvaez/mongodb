@@ -1,15 +1,15 @@
 use("espoch_store");
 
-var documentoExistente = db.products.findOne({ _id: 1 });
+var documentoExistente = db.ganaderia.findOne({ _id: "6577de320b81def05d710c92" });
 
 if (documentoExistente) {
     // Elimina el documento existente
-    db.products.deleteOne({ _id: 1 });
+    db.ganaderia.deleteOne({ _id: 1 });
 
     // Inserta el documento con nuevo _id
     documentoExistente._id = null;
-    db.products.insertOne(documentoExistente);
+    db.ganaderia.insertOne(documentoExistente);
 }
 
 // Muestra los documentos actualizados
-db.products.find();
+db.ganaderia.find();

@@ -1,2 +1,2 @@
 use("espoch_store")
-db.products.find()
+db.ganaderia.find()

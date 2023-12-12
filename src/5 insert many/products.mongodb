@@ -1,6 +1,6 @@
 use("espoch_store")
-db.products.drop()
-db.products.insertMany([
+db.ganaderia.drop()
+db.ganaderia.insertMany([
     {
         _id:1,
         name:"product 1",
@@ -18,8 +18,10 @@ db.products.insertMany([
         price:1400
     },
     {
-        ordered:false,
+        name:"product 3",
+        price:1400
     }
 
+
 ])
-db.products.find()
+db.ganaderia.find()
