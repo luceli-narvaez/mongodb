@@ -1,0 +1,15 @@
+use("espoch_store");
+
+var documentoExistente = db.products.findOne({ _id: 1 });
+
+if (documentoExistente) {
+    // Elimina el documento existente
+    db.products.deleteOne({ _id: 1 });
+
+    // Inserta el documento con nuevo _id
+    documentoExistente._id = null;
+    db.products.insertOne(documentoExistente);
+}
+
+// Muestra los documentos actualizados
+db.products.find();
